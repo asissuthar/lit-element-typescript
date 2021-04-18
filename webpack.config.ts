@@ -13,12 +13,10 @@ const config: webpack.Configuration = {
       import: fullPath('scripts/my-element.ts'),
     },
   },
-
   output: {
     path: fullPath('dist'),
     filename: '[name].bundle.js',
   },
-
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
@@ -27,7 +25,6 @@ const config: webpack.Configuration = {
       scriptLoading: 'blocking',
     }),
   ],
-
   module: {
     rules: [
       {
@@ -37,16 +34,15 @@ const config: webpack.Configuration = {
       },
     ],
   },
-
   resolve: {
     extensions: ['.ts', '.js'],
   },
-
   devServer: {
     host: '0.0.0.0',
     open: true,
     useLocalIp: true,
   },
+  devtool: false,
 };
 
 export default config;
